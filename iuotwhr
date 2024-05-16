@@ -13,7 +13,7 @@ for (let zeile = 0; zeile < 10; zeile++) {
 }
 
 console.log(matrix);
-
+//es sind intressante sachen di ich wieder aus probieren sollte
 
 function setup() {
     createCanvas(500,500);
