@@ -22,7 +22,8 @@ function zeichneMatrix() {
                 fill("green")
             } else if (element === 1) {
                 fill("black")
-            }    
+            } else if (element === 7)
+                fill("violet")
             rect(spalte*kästchenXY,zeile*kästchenXY,kästchenXY,kästchenXY);
         }
     }
