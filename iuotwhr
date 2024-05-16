@@ -1,0 +1,113 @@
+
+
+let matrix = [];
+
+for (let zeile = 0; zeile < 10; zeile++) {
+    matrix.push([]);
+}
+
+for (let zeile = 0; zeile < 10; zeile++) {
+    for (let spalte = 0; spalte < 10; spalte++) {
+        matrix[zeile][spalte] = 1;
+    }    
+}
+
+console.log(matrix);
+
+
+function setup() {
+    createCanvas(500,500);
+    frameRate(5);
+    clear();
+
+    background("red");
+
+    let kästchenXY = 50;
+    // Wir gehen durch die ganze Tabelle durch ✔️
+    // und schauen uns jedes Kästchen an ✔️
+    // und je nach dem welche Zahl es ist (0 oder 1) wähl farbe ✔️
+    // zeichnen wir an der richtigen Stelle ein Kästchen 
+
+    for (let zeile = 0; zeile < 10; zeile++) {
+        for (let spalte = 0; spalte < 10; spalte++) {
+            let element = matrix[zeile][spalte];
+            console.log("zeile:",zeile,"spalte:",spalte,"wert:",element);
+            // if der wert ist 1
+            // dann die farbe grau
+            // if der wert ist 0
+            // dann weiß
+            if (element === 1) {
+                fill("green");
+            } else if (element === 0) {
+                fill("white");
+            }
+            rect(spalte*kästchenXY,zeile*kästchenXY,kästchenXY,kästchenXY);
+
+        }
+    }
+}
+
+function draw() {
+
+
+
+}
+
+
+
+
+
+
+
+// function istTreffer(koordinatenPaar) {
+//     let zeile = koordinatenPaar[0];
+//     let spalte = koordinatenPaar[1];
+//     if (zeile >= 0 &&
+//         spalte >= 0 &&
+//         zeile < 10 &&
+//         spalte < 10 &&
+//         matrix[zeile][spalte] === 1) {
+//         return true ;
+//     } else {
+//         return false;
+//     }
+// }
+
+// let geratenePositionen = [
+//     [0,0],
+//     [-3000,2],
+//     [1,9],
+//     [9,8],
+//     [100,100],
+// ]
+
+// let gefiltertePositionen = geratenePositionen.filter(istTreffer);
+// console.log(gefiltertePositionen)
+
+function erstelleMatrix() {
+    for (let zeile = 0; zeile < seite; zeile++) {
+        matrix.push([])
+        for (let spalte = 0; spalte < seite; spalte++) {
+            matrix[zeile][spalte] = 1;
+        }    
+    }
+}
+function zeichneMatrix() {
+    let kästchenXY = 10;
+    for (let zeile = 0; zeile < seite; zeile++) {
+        for (let spalte = 0; spalte < seite; spalte++) {
+            let element = matrix[zeile][spalte];
+            //console.log("zeile:",zeile,"spalte:",spalte,"wert:",element);
+            if (element === 1) {
+                fill("green");
+            } else if (element === 0) {
+                fill("#d2be64");
+            } else if (element === 3) {
+                fill("blue");
+            } else if (element === 2) {
+                fill("red");
+            }
+            rect(spalte*kästchenXY,zeile*kästchenXY,kästchenXY,kästchenXY);
+        }
+    }
+}    
