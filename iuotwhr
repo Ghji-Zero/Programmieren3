@@ -14,6 +14,7 @@ for (let zeile = 0; zeile < 10; zeile++) {
 
 console.log(matrix);
 
+//sollte die Codes mal ausprobieren
 
 function setup() {
     createCanvas(500,500);
