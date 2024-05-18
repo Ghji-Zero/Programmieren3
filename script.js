@@ -15,7 +15,7 @@ function setup() {
     ObjectAray.push(new Grass(3,1))
     ObjectAray.push(new Grass(4,4))
     ObjectAray.push(new FleichFresser(9,9))
-    objektAray.push(new Miyth(50,500))
+    ObjektAray.push(new Miyth(50,500))
 }
 
 let i = 0
