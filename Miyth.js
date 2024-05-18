@@ -1,4 +1,4 @@
-class myth  {
+class Miyth  {
     constructor(z,s) {
         this.zeile = z;
         this.spalte = s;
@@ -6,25 +6,28 @@ class myth  {
     }
     zeile; //= randomNumber(0,100);
     spalte; //= randomNumber(0,100);
-    energie = 1500
+    energie = 2000
+    re=0
     plaziereSelbstInMatrix() {
         matrix[this.zeile][this.spalte] = 7;
     };
     spielzug() {
-        if (this.energie > 0) {
-            let grassFelder = this.scan();
-            if (grassFelder.length > 0) {
-                this.energie++;
-                this.machSchrittMachvorne();
+        if (this.energie > 0, this.re < 1000) {
+            if (re == 1000){                
+                let erdeFeld = erdeFelder[randomNumber(0,erdeFelder.length)];
+                let newGrassZelle = new Grass(erdeFeld[0],erdeFeld[1]);
+                ObjectAray.push(newGrassZelle);
+                //console.log(ObjectAray.length)   
             } else {
                 this.energie--
+                this.re++
             }
         } else {
             matrix[this.zeile][this.spalte] = 0;
             delette(this.zeile,this.spalte)
         }
     };
-    machSchrittMachvorne() {
+/*    machSchrittMachvorne() {
         let grassFelder = this.scan();
         
         if (grassFelder.length > 0) {
@@ -63,4 +66,5 @@ class myth  {
             return false;
         }
     }
+    */
 }
