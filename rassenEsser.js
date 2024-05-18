@@ -1,5 +1,5 @@
-class rassenEsser  {
-    constructor(z,s) {
+class rassenEsser {
+    constructor(z, s) {
         this.zeile = z;
         this.spalte = s;
         this.plaziereSelbstInMatrix()
@@ -11,7 +11,7 @@ class rassenEsser  {
         matrix[this.zeile][this.spalte] = 5;
     };
     spielzug() {
-        if(this.energie > 30) {
+        if (this.energie > 30) {
             this.energie = 15
             this.newRE();
         } else if (this.energie > 0) {
@@ -24,41 +24,41 @@ class rassenEsser  {
             }
         } else {
             matrix[this.zeile][this.spalte] = 0;
-            delette(this.zeile,this.spalte)
+            delette(this.zeile, this.spalte)
         }
     };
     newRE() {
         let grasFelder = this.scan();
-        
+
         if (grasFelder.length > 0) {
-            let grasFeld = grasFelder[randomNumber(0,grasFelder.length)];
-            delette(grasFeld[0],grasFeld[1])
-            let newREzelle = new rassenEsser(grasFeld[0],grasFeld[1]);
+            let grasFeld = grasFelder[randomNumber(0, grasFelder.length)];
+            delette(grasFeld[0], grasFeld[1])
+            let newREzelle = new rassenEsser(grasFeld[0], grasFeld[1]);
             ObjectAray.push(newREzelle);
-        }   
+        }
     }
     machSchrittMachvorne() {
         let grassFelder = this.scan();
-        
+
         if (grassFelder.length > 0) {
-            let grasFeld = grassFelder[randomNumber(0,grassFelder.length)]
+            let grasFeld = grassFelder[randomNumber(0, grassFelder.length)]
             matrix[this.zeile][this.spalte] = 0;
-            delette(grasFeld[0],grasFeld[1]);
+            delette(grasFeld[0], grasFeld[1]);
             this.zeile = grasFeld[0];
-            this.spalte = grasFeld[1]; 
+            this.spalte = grasFeld[1];
             matrix[this.zeile][this.spalte] = 5;
-        }   
+        }
     };
     scan() {
         let benachbarteFelder = [
-            [this.zeile+1,this.spalte],
-            [this.zeile-1,this.spalte],            
-            [this.zeile,this.spalte+1],
-            [this.zeile,this.spalte-1],
-            [this.zeile+1,this.spalte+1],
-            [this.zeile-1,this.spalte-1],
-            [this.zeile+1,this.spalte-1],
-            [this.zeile-1,this.spalte+1],
+            [this.zeile + 1, this.spalte],
+            [this.zeile - 1, this.spalte],
+            [this.zeile, this.spalte + 1],
+            [this.zeile, this.spalte - 1],
+            [this.zeile + 1, this.spalte + 1],
+            [this.zeile - 1, this.spalte - 1],
+            [this.zeile + 1, this.spalte - 1],
+            [this.zeile - 1, this.spalte + 1],
         ]
         let grassFelder = benachbarteFelder.filter(this.istGrass)
         return grassFelder;
@@ -71,7 +71,7 @@ class rassenEsser  {
             zeile < matrix.length &&
             spalte < matrix[zeile].length &&
             matrix[zeile][spalte] === 3) {
-            return true ;
+            return true;
         } else {
             return false;
         }
