@@ -1,4 +1,6 @@
-class rassenEsser extends lebewessen {
+var lebewessen = require("./lebewessen");
+
+module.exports = class rassenEsser extends lebewessen {
     constructor(z, s, energie) {
         super(z, s, energie);
         this.zeile = z;

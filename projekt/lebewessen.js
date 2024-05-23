@@ -1,4 +1,4 @@
-class lebewessen {
+module.exports = class lebewessen {
     constructor(z, s, energie) {
         this.zeile = z
         this.spalte = s

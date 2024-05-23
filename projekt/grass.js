@@ -1,4 +1,6 @@
-class Grass extends lebewessen {
+var lebewessen = require("./lebewessen");
+
+module.exports = class Grass extends lebewessen {
     constructor(z, s, energie) {
         super(z, s, energie);
         this.zeile = z;

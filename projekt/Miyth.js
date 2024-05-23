@@ -1,4 +1,6 @@
-class Miyth extends lebewessen {
+var lebewessen = require("./lebewessen");
+
+module.exports = class Miyth extends lebewessen {
     constructor(z, s, energie) {
         super(z, s, energie);
         this.zeile = z;
@@ -14,7 +16,7 @@ class Miyth extends lebewessen {
                 let newGrassZelle = new Grass(erdeFeld[0], erdeFeld[1]);
                 ObjectAray.push(newGrassZelle);
                 //console.log(ObjectAray.length)
-                this.re=0
+                this.re = 0
             } else {
                 this.energie--
                 this.re++
