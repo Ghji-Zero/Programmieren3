@@ -1,3 +1,5 @@
+const {matrix} = require("./utils")
+
 var lebewessen = require("./lebewessen");
 
 module.exports = class FleichFresser extends lebewessen {
