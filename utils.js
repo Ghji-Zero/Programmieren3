@@ -29,7 +29,7 @@ function random(...args) {
 
 function zeichneMatrix() {
     let kästchenXY = 10;
-    for (let zeile = 0; zeile < seite; zeile++) {
+    /*for (let zeile = 0; zeile < seite; zeile++) {
         for (let spalte = 0; spalte < seite; spalte++) {
             let element = matrix[zeile][spalte];
             if (element === 0) {
@@ -44,7 +44,27 @@ function zeichneMatrix() {
                 //fill("violet")
             //rect(spalte * kästchenXY, zeile * kästchenXY, kästchenXY, kästchenXY);
         }
-    }
+    }*/
+//     for (let zeile = 0; zeile < matrix.length; zeile++) {
+//         for (let spalte = 0; spalte < matrix[zeile].length; spalte++) {
+//             element = matrix[zeile][spalte]
+//             if (element === 0) {
+//                 process.stdout.write(" ")
+//             } else if (element === 1) {
+//                 process.stdout.write("B")
+//             } else if (element === 3) {
+//                 process.stdout.write("G")
+//             } else if (element === 5) {
+//                 process.stdout.write("R")
+//             } else if (element === 7) {
+//                 process.stdout.write("V")
+//             }
+//         // Wenn der erste Durchlauf von der Äußerden Schleife (Zeile) fertig
+//         // ist, wollen wir eine neue Zeile auf der Konsole anfangen
+//         }
+//     process.stdout.write("\n")    
+//     }
+// process.stdout.write("\u001b[" + matrix.length + "A")
 }
 
 module.exports = {

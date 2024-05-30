@@ -45,7 +45,6 @@ function setup() {
 
 let i = 0
 function draw() {
-    console.log("loading")
     i++;
     if (i < 1000000000) {
         for (let i = 0; i < ObjectAray.length; i++) {
@@ -58,4 +57,7 @@ function draw() {
 setup();
 setInterval(draw, 1000);
 
-module.exports = {setup,draw};
+module.exports = {
+    setup: setup,
+    draw: draw
+};
