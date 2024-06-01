@@ -12,11 +12,11 @@ function setup() {
 // Hier reagieren wir auf das Ereignis matrix, das uns die aktuelle Matrix vom Server sendet.
 socket.on('matrix', (matrix) => {
     // Die Matrix wird auf den Bildschirm gezeichnet.
-    let seite = 100;
+    let kästchenXY = 15;
+
     
-    
-    for (let i = 0; i < matrix.length; i++) {
-        for (let spalte = 0; spalte < seite; spalte++) {
+    for (let zeile = 0; zeile < matrix.length; zeile++) {
+        for (let spalte = 0; spalte < matrix.length; spalte++) {
             let element = matrix[zeile][spalte];
             if (element === 0) {
                 fill("#d2be64");

@@ -40,9 +40,10 @@ io.on('connection', (socket) => {
 
     setup();
     intetval = setInterval(() => {
+        // console.log("emit draw")
         draw();
         socket.emit('matrix', matrix);
-    }, 30);
+    }, 100);
 });
 
 

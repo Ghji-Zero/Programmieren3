@@ -17,7 +17,6 @@ module.exports = class Miyth extends lebewessen {
                 let erdeFeld = erdeFelder[randomNumber(0, erdeFelder.length)];
                 let newGrassZelle = new Grass(erdeFeld[0], erdeFeld[1]);
                 ObjectAray.push(newGrassZelle);
-                //console.log(ObjectAray.length)
                 this.re = 0
             } else {
                 this.energie--

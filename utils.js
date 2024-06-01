@@ -1,6 +1,10 @@
 let matrix = [];
-let seite = 100;
+let seite = 50;
 
+
+function randomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+}
 
 function delette(zeile, spalte) {
     let index = ObjectAray.findIndex(function (grassObjekt) {
@@ -28,7 +32,6 @@ function random(...args) {
 
 
 function zeichneMatrix() {
-    let kästchenXY = 10;
     /*for (let zeile = 0; zeile < seite; zeile++) {
         for (let spalte = 0; spalte < seite; spalte++) {
             let element = matrix[zeile][spalte];
@@ -72,5 +75,6 @@ module.exports = {
     random: random,
     delette: delette,
     matrix: matrix,
-    seite: seite
+    seite: seite,
+    randomNumber: randomNumber
 }

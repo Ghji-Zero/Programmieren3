@@ -32,6 +32,12 @@ function erstelleMatrix() {
         for (let spalte = 0; spalte < seite; spalte++) {
             let cls = RandomLive();
             matrix[zeile][spalte] = cls;
+
+            if (cls == 0)continue
+            let classList = [Empty, FleichFresser, 0, rassenEsser, 0, Grass, 0, Miyth ]
+            let liveClass = classList[cls]
+            ObjectAray.push(new liveClass(zeile, spalte))
+
         }
     }
 }
@@ -45,17 +51,16 @@ function setup() {
 
 let i = 0
 function draw() {
+    //console.log("draw")
     i++;
     if (i < 1000000000) {
         for (let i = 0; i < ObjectAray.length; i++) {
             ObjectAray[i].spielzug();
         }
+        //console.log("draw")
     }
     zeichneMatrix()
 }
-
-setup();
-setInterval(draw, 1000);
 
 module.exports = {
     setup: setup,

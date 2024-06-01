@@ -11,7 +11,7 @@ module.exports = class FleichFresser extends lebewessen {
         this.plaziereSelbstInMatrix(1);
     }
     spielzug() {
-        console.log(this.energie);
+        //console.log(this.energie);
         if (this.energie > 2000) {
             this.energie = 1000
             this.newFF();
@@ -35,7 +35,7 @@ module.exports = class FleichFresser extends lebewessen {
             let Feld = Felder[randomNumber(0, Felder.length)];
             delette(Feld[0], Feld[1])
             let newFFzelle = new FleichFresser(Feld[0], Feld[1]);
-            console.log(Feld[0]);
+            //console.log(Feld[0]);
             ObjectAray.push(newFFzelle);
         }
     }
