@@ -1,4 +1,4 @@
-const {matrix} = require("./utils")
+const { matrix, delette } = require("./utils")
 
 var lebewessen = require("./lebewessen");
 

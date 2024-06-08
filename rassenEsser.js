@@ -1,4 +1,4 @@
-const {matrix, randomNumber} = require("./utils")
+const { matrix, randomNumber, delette } = require("./utils")
 var lebewessen = require("./lebewessen");
 
 module.exports = class rassenEsser extends lebewessen {
