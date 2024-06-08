@@ -8,7 +8,6 @@ module.exports = class lebewessen {
         this.plaziereSelbstInMatrix();
     };
     plaziereSelbstInMatrix(type) {
-        console.log("matrix", matrix)
         matrix[this.zeile][this.spalte] = type;
     };
 }

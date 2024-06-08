@@ -12,13 +12,8 @@ for (let zeile = 0; zeile < 10; zeile++) {
     }    
 }
 
-console.log(matrix);
-<<<<<<< HEAD
 
 //sollte die Codes mal ausprobieren
-=======
-//es sind intressante sachen di ich wieder aus probieren sollte
->>>>>>> 7a53a1af14b5bd712f051913e2812be252c576a5
 
 function setup() {
     createCanvas(500,500);

@@ -1,4 +1,4 @@
-const {matrix} = require("./utils")
+const { matrix, randomNumber, delette, ObjectAray } = require("./utils")
 
 var lebewessen = require("./lebewessen");
 

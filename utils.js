@@ -1,5 +1,7 @@
 let matrix = [];
 let seite = 50;
+let ObjectAray = [];
+
 
 
 function randomNumber(min, max) {
@@ -48,26 +50,26 @@ function zeichneMatrix() {
             //rect(spalte * kästchenXY, zeile * kästchenXY, kästchenXY, kästchenXY);
         }
     }*/
-//     for (let zeile = 0; zeile < matrix.length; zeile++) {
-//         for (let spalte = 0; spalte < matrix[zeile].length; spalte++) {
-//             element = matrix[zeile][spalte]
-//             if (element === 0) {
-//                 process.stdout.write(" ")
-//             } else if (element === 1) {
-//                 process.stdout.write("B")
-//             } else if (element === 3) {
-//                 process.stdout.write("G")
-//             } else if (element === 5) {
-//                 process.stdout.write("R")
-//             } else if (element === 7) {
-//                 process.stdout.write("V")
-//             }
-//         // Wenn der erste Durchlauf von der Äußerden Schleife (Zeile) fertig
-//         // ist, wollen wir eine neue Zeile auf der Konsole anfangen
-//         }
-//     process.stdout.write("\n")    
-//     }
-// process.stdout.write("\u001b[" + matrix.length + "A")
+    //     for (let zeile = 0; zeile < matrix.length; zeile++) {
+    //         for (let spalte = 0; spalte < matrix[zeile].length; spalte++) {
+    //             element = matrix[zeile][spalte]
+    //             if (element === 0) {
+    //                 process.stdout.write(" ")
+    //             } else if (element === 1) {
+    //                 process.stdout.write("B")
+    //             } else if (element === 3) {
+    //                 process.stdout.write("G")
+    //             } else if (element === 5) {
+    //                 process.stdout.write("R")
+    //             } else if (element === 7) {
+    //                 process.stdout.write("V")
+    //             }
+    //         // Wenn der erste Durchlauf von der Äußerden Schleife (Zeile) fertig
+    //         // ist, wollen wir eine neue Zeile auf der Konsole anfangen
+    //         }
+    //     process.stdout.write("\n")    
+    //     }
+    // process.stdout.write("\u001b[" + matrix.length + "A")
 }
 
 module.exports = {
@@ -76,5 +78,6 @@ module.exports = {
     delette: delette,
     matrix: matrix,
     seite: seite,
-    randomNumber: randomNumber
+    randomNumber: randomNumber,
+    ObjectAray: ObjectAray
 }
