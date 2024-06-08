@@ -43,7 +43,7 @@ io.on('connection', (socket) => {
         // console.log("emit draw")
         draw();
         socket.emit('matrix', matrix);
-    }, 100);
+    }, 60);
 });
 
 

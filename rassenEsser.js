@@ -1,4 +1,4 @@
-const { matrix, randomNumber, delette } = require("./utils")
+const { matrix, randomNumber, delette, ObjectAray } = require("./utils")
 var lebewessen = require("./lebewessen");
 
 module.exports = class rassenEsser extends lebewessen {
@@ -6,11 +6,15 @@ module.exports = class rassenEsser extends lebewessen {
         super(z, s, energie);
         this.zeile = z;
         this.spalte = s;
-        this.energie = 15;
+        this.energie = 40;
         this.plaziereSelbstInMatrix(5);
+        this.geschlecht = "weib";
+         if (Math.random() < 0.5) {
+             this.geschlecht = "man";
+         } 
     }
     spielzug() {
-        if (this.energie > 30) {
+        if (this.energie > 50 && this.geschlecht == "weib") {
             this.energie = 15
             this.newRE();
         } else if (this.energie > 0) {
@@ -27,14 +31,18 @@ module.exports = class rassenEsser extends lebewessen {
         }
     };
     newRE() {
-        let grasFelder = this.scan();
+        let manFelder = this.scanNachMan();
+        if (manFelder.length>0){
+            let grasFelder = this.scan()
 
-        if (grasFelder.length > 0) {
-            let grasFeld = grasFelder[randomNumber(0, grasFelder.length)];
-            delette(grasFeld[0], grasFeld[1])
-            let newREzelle = new rassenEsser(grasFeld[0], grasFeld[1]);
-            ObjectAray.push(newREzelle);
+            if (grasFelder.length > 0) {
+                let grasFeld = grasFelder[randomNumber(0, grasFelder.length)];
+                delette(grasFeld[0], grasFeld[1])
+                let newREzelle = new rassenEsser(grasFeld[0], grasFeld[1]);
+                ObjectAray.push(newREzelle);
+            }
         }
+
     }
     machSchrittMachvorne() {
         let grassFelder = this.scan();
@@ -62,6 +70,36 @@ module.exports = class rassenEsser extends lebewessen {
         let grassFelder = benachbarteFelder.filter(this.istGrass)
         return grassFelder;
     };
+    scanNachMan() {
+        let benachbarteFelder = [
+            [this.zeile + 1, this.spalte],
+            [this.zeile - 1, this.spalte],
+            [this.zeile, this.spalte + 1],
+            [this.zeile, this.spalte - 1],
+            [this.zeile + 1, this.spalte + 1],
+            [this.zeile - 1, this.spalte - 1],
+            [this.zeile + 1, this.spalte - 1],
+            [this.zeile - 1, this.spalte + 1],
+            [this.zeile + 2, this.spalte],
+            [this.zeile - 2, this.spalte],
+            [this.zeile, this.spalte + 2],
+            [this.zeile, this.spalte - 2],
+            [this.zeile + 2, this.spalte + 1],
+            [this.zeile - 2, this.spalte - 1],
+            [this.zeile + 2, this.spalte - 1],
+            [this.zeile - 2, this.spalte + 1],
+            [this.zeile + 2, this.spalte + 2],
+            [this.zeile - 2, this.spalte - 2],
+            [this.zeile - 2, this.spalte + 2],
+            [this.zeile + 2, this.spalte - 2],
+            [this.zeile + 1, this.spalte + 2],
+            [this.zeile - 1, this.spalte - 2],
+            [this.zeile + 1, this.spalte - 2],
+            [this.zeile - 1, this.spalte + 2],
+        ]
+        let grassFelder = benachbarteFelder.filter(this.istMan.bind(this))
+        return grassFelder;
+    };
     istGrass(koordinaten) {
         let zeile = koordinaten[0];
         let spalte = koordinaten[1];
@@ -74,5 +112,18 @@ module.exports = class rassenEsser extends lebewessen {
         } else {
             return false;
         }
-    }
+    };
+    istMan(koordinaten) {
+        let zeile = koordinaten[0];
+        let spalte = koordinaten[1];
+        if (zeile >= 0 &&
+            spalte >= 0 &&
+            zeile < matrix.length &&
+            spalte < matrix[zeile].length &&
+            matrix[zeile][spalte] === 5 && this.geschlecht == "man") {
+            return true;
+        } else {
+            return false;
+        }
+    };
 }

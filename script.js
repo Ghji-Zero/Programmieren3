@@ -7,10 +7,9 @@ const { random, zeichneMatrix, matrix, seite, ObjectAray } = require("./utils");
 
 
 let Creature = [
-    [7, 0.005],
-    [5, 0.2],
-    [1, 0.1],
-    [3, 0.15],
+    [5, 0.02],
+    [1, 0.0005],
+    [3, 0.010],
 ]
 
 function RandomLive() {

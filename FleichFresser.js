@@ -12,13 +12,14 @@ module.exports = class FleichFresser extends lebewessen {
     }
     spielzug() {
         //console.log(this.energie);
-        if (this.energie > 2000) {
+        if (this.energie > 1500) {
             this.energie = 1000
             this.newFF();
         } else if (this.energie > 0) {
             let Felder = this.scan();
             if (Felder.length > 0) {
-                this.energie += 100;
+                this.energie += 5
+                0;
                 this.machSchrittMachvorne();
             } else {
                 this.energie -= 12, 5;
