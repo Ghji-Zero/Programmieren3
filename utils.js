@@ -32,6 +32,12 @@ function random(...args) {
     }
 }
 
+let data = {
+    gras: { created: 0, living: 0 },
+    rasen_fresser: { created: 0, living: 0 },
+
+};
+
 
 function zeichneMatrix() {
     /*for (let zeile = 0; zeile < seite; zeile++) {
@@ -79,5 +85,6 @@ module.exports = {
     matrix: matrix,
     seite: seite,
     randomNumber: randomNumber,
-    ObjectAray: ObjectAray
+    ObjectAray: ObjectAray,
+    data: data
 }

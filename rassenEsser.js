@@ -1,4 +1,4 @@
-const { matrix, randomNumber, delette, ObjectAray } = require("./utils")
+const { matrix, randomNumber, delette, ObjectAray, data } = require("./utils")
 var lebewessen = require("./lebewessen");
 
 module.exports = class rassenEsser extends lebewessen {
@@ -9,6 +9,7 @@ module.exports = class rassenEsser extends lebewessen {
         this.energie = 40;
         this.plaziereSelbstInMatrix(5);
         this.geschlecht = "weib";
+        data.rasen_fresser.created++;
          if (Math.random() < 0.5) {
              this.geschlecht = "man";
          } 

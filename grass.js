@@ -1,4 +1,4 @@
-const { matrix, randomNumber, ObjectAray } = require("./utils")
+const { matrix, randomNumber, ObjectAray, data } = require("./utils")
 var lebewessen = require("./lebewessen");
 
 module.exports = class Grass extends lebewessen {
@@ -8,6 +8,7 @@ module.exports = class Grass extends lebewessen {
         this.spalte = s;
         this.energie = 0;
         this.plaziereSelbstInMatrix(3);
+        data.gras.created++;
     }
     plaziereSelbstInMatrix() {
         matrix[this.zeile][this.spalte] = 3;

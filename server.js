@@ -6,7 +6,7 @@ const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
 const {draw, setup} = require("./script");
-const {matrix} = require("./utils");
+const {matrix, data} = require("./utils");
 
 
 // wir speichern das Ergebnis von der setInterval Funktion in einer Variable,
@@ -43,6 +43,7 @@ io.on('connection', (socket) => {
         // console.log("emit draw")
         draw();
         socket.emit('matrix', matrix);
+        socket.emit('data', data);
     }, 60);
 });
 

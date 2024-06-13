@@ -1,0 +1,39 @@
+body{
+    background-color: rgb(41, 38, 38);
+    color: ivory;   
+    font-family: sans-serif;
+}
+
+main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+}
+
+#data-table {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    border: 1px solid white;
+    border-collapse: collapse;
+}
+
+#data-table tr th, td {
+    border: 1px solid white;
+    padding: 3px;
+}
+
+#data-table tr th {
+    padding-right: 8px;
+}
+
+.no-data {
+    color: #666;
+}
+
+#wetter {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+}

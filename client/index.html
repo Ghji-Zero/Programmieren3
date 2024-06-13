@@ -6,11 +6,31 @@
       crossorigin="anonymous" referrerpolicy="no-referrer"></script>
    <script src="/socket.io/socket.io.js"></script>
    <script src="scrip.js"></script>
+   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
    <!-- hier können noch ein paar Informationen stehen
    oder verschiedene buttons oder so -->
+   <table id="data-table">
+      <tr>
+          <th></th>
+          <th>Created</th>
+          <th>Living</th>
+      </tr>
+      <tr id="gras">
+          <td>Grass</td>
+          <td></td>
+          <td></td>
+          <td class="no-data">no data found</td>
+      </tr>
+      <tr id="rasen-fresser">
+          <td>Rassen Esser</td>
+          <td></td>
+          <td></td>
+          <td class="no-data">no data found</td>
+      </tr>
+  </table>
 </body>
 
 </html>
