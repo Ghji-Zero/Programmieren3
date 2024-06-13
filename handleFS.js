@@ -1,7 +1,7 @@
 const { data, matrix } = require("./utils.js");
 const fs = require("fs");
 
-let kästchenXY = 15;
+let kästchenXY = 12;
 
 function commitData(user) {
     if (!user) return console.error("no user found");
@@ -34,14 +34,14 @@ function commitData(user) {
 function countLivings() {
     let aktivesArray = matrix;
     let gras = 0,
-        rasen_fresser = 0,
-    for (let zeile = 0; zeile < XY; zeile++) {
-        for (let spalte = 0; spalte < XY; spalte++) {
+        rasen_fresser = 0;
+    for (let zeile = 0; zeile < kästchenXY; zeile++) {
+        for (let spalte = 0; spalte < kästchenXY; spalte++) {
             element = aktivesArray[zeile][spalte];
-            if (element === 3) {
+            if (element === 5) {
                 gras++;
                 // data.gras.living++;
-            } else if (element === 5) {
+            } else if (element === 3) {
                 rasen_fresser++;
                 // data.rasen_fresser.living++;
             }

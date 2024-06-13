@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
-
+const { commitData, countLivings } = require ("./handleFS.js");
 const {draw, setup} = require("./script");
 const {matrix, data} = require("./utils");
 
@@ -42,7 +42,9 @@ io.on('connection', (socket) => {
     intetval = setInterval(() => {
         // console.log("emit draw")
         draw();
+        countLivings();
         socket.emit('matrix', matrix);
+        commitData(socket.id);
         socket.emit('data', data);
     }, 60);
 });
